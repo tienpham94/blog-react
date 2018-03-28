@@ -3,21 +3,24 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack-dashboard -- webpack-dev-server",
     "test": "jest"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.22.0",
     "babel-preset-react": "^6.22.0",
     "css-loader": "^0.26.1",
-    "enzyme": "^3.3.0",
+    "enzyme": "^2.7.1",
+    "enzyme-to-json": "^1.4.5",
     "extract-text-webpack-plugin": "2.0.0-beta.5",
     "html-webpack-plugin": "^2.26.0",
-    "jest": "^22.4.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^18.1.0",
     "normalize.css": "^5.0.0",
     "react": "^15.4.2",
+    "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-router": "4.0.0-alpha.6",
     "standard": "^8.6.0",
@@ -26,5 +29,10 @@
     "webpack": "2.2.0-rc.4",
     "webpack-dashboard": "^0.2.1",
     "webpack-dev-server": "^1.16.2"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.css$": "identity-obj-proxy"
+    }
   }
 }

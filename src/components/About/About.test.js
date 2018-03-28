@@ -1,8 +1,9 @@
 import React from 'react'
 import { shallow } from 'enzyme'
+// import toJson from 'enzyme-to-json'
 import About from './About'
 
-test('About component should render as expected', () => {
-  const component = shalow(<About />)
-  console.log(component);
-})
+test('something', () => {
+  const component = shallow(<About />)
+  console.log(component)
+});
