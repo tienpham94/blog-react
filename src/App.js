@@ -1,11 +1,12 @@
 import React from 'react'
-import { BrowserRouter, Match } from 'react-router'
+import { BrowserRouter, Match, Miss } from 'react-router'
 
 import 'normalize.css'
 import styles from './App.css'
 import About from './components/About/About'
 import Header from './components/Header/Header'
 import Post from './components/Post/Post'
+import NotFound from './components/NotFound/NotFound'
 
 const App = () => (
   <BrowserRouter>
@@ -13,11 +14,7 @@ const App = () => (
       <Header />
       <div className={styles.container}>
         <Match exactly pattern='/about' component={About} />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
+        <Miss component={NotFound} />
       </div>
     </div>
   </BrowserRouter>
