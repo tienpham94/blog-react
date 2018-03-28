@@ -1,5 +1,6 @@
 import React from 'react'
 
+import 'normalize.css'
 import styles from './App.css'
 
 const App = () => (

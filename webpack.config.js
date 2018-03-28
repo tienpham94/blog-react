@@ -21,8 +21,16 @@ module.exports = {
       exclude: /node_modules/
     }, {
       test: /\.css$/,
-      loader: 'style-loader!css-loader?modules,localIdentName=[hash:base64:6]-[name]-[local]',
-      exclude: /node_modules/
+      use: [{
+        loader: 'style-loader'
+      }, {
+        loader: 'css-loader',
+        options: {
+          modules: true,
+          localIdentName: '[name]-[local]-[hash:base64:6]',
+          camelCase: true
+        }
+      }]
     }]
   },
   plugins: [

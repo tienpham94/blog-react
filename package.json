@@ -1,5 +1,5 @@
 {
-  "name": "aletta",
+  "name": "blog",
   "private": true,
   "license": "MIT",
   "scripts": {
@@ -11,9 +11,10 @@
     "babel-loader": "^6.2.10",
     "babel-preset-react": "^6.16.0",
     "css-loader": "^0.26.1",
-    "extract-text-webpack-plugin": "2.0.0-beta.4",
+    "extract-text-webpack-plugin": "2.0.0-beta.5",
     "html-webpack-plugin": "^2.26.0",
     "jest": "^18.1.0",
+    "normalize.css": "^5.0.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "standard": "^8.6.0",
