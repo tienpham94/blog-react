@@ -1,0 +1,26 @@
+{
+  "name": "aletta",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dashboard -- webpack-dev-server",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "2.0.0-beta.4",
+    "html-webpack-plugin": "^2.26.0",
+    "jest": "^18.1.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "standard": "^8.6.0",
+    "standard-loader": "^5.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "2.2.0-rc.4",
+    "webpack-dashboard": "^0.2.1",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
