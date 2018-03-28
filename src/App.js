@@ -1,10 +1,12 @@
 import React from 'react'
 
 import 'normalize.css'
-import styles from './App.css'
+// import styles from './App.css'
+import Header from './components/Header/Header'
+import Post from './components/Post/Post'
 
 const App = () => (
-  <h1 className={styles.heading}>Hello World!</h1>
+  <Header />
 )
 
 export default App
