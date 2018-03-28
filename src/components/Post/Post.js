@@ -1,11 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 import styles from './Post.css'
 
-const Post = () => (
+const Post = (props) => (
   <div>
-    <h2 className={styles.title}><a href='#'>Blog title</a></h2>
-    <p className={styles.content}>Content</p>
+    <h2 className={styles.title}>
+      {props.titleLink
+      ? <Link className={styles.link} to={`/post/${props.slug}`}>{props.title}</Link>
+      : props.title}
+    </h2>
+    <p className={styles.content}>{props.excerpt}</p>
   </div>
 )
 
