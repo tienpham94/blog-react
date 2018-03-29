@@ -28,6 +28,12 @@ module.exports = {
     }]
   },
   devtool: 'source-map',
+  resolve: {
+    alias: {
+      react: 'preact-compat',
+      'react-dom': 'preact-compat'
+    }
+  },
   plugins: [
     new CleanWebpackPlugin(['dist'], {
       root: resolve(__dirname, '..')
