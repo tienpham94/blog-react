@@ -13,10 +13,7 @@ const Routes = () => (
     <Switch>
       <Route path="/" component={() => <Home posts={posts.posts} />} exact={true} />
       <Route path="/about" component={About} />
-      <Route path="/post/:slug" component={props => {
-        const post = posts.posts.filter(post => props.params.slug === post.slug)
-        return <PostDetail post={post[0]} />
-      }} />
+      <Route path="/post/:slug" component={PostDetail} />
       <Route component={NotFound} />
    </Switch>
   </div>
