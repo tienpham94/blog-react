@@ -1,6 +1,6 @@
 import React from 'react'
-// import { Match, Miss } from 'react-router'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router'
+
 import Home from '../Home/Home'
 import About from '../About/About'
 import PostDetail from '../PostDetail/PostDetail'
@@ -9,14 +9,15 @@ import NotFound from '../NotFound/NotFound'
 import posts from '../../../blog-posts.json'
 
 const Routes = () => (
-  <div>
-    <Switch>
-      <Route path='/' component={() => <Home posts={posts.posts} />} exact />
-      <Route path='/about' component={About} />
-      <Route path='/post/:slug' component={PostDetail} />
-      <Route component={NotFound} />
-    </Switch>
-  </div>
+  <Switch>
+    <Route exact path='/' component={() => <Home posts={posts.posts} />} />
+    <Route path='/about' component={About} />
+    <Route path='/post/:slug' component={props => {
+      const post = posts.posts.filter(post => props.match.params.slug === post.slug)
+      return <PostDetail post={post[0]} />
+    }} />
+    <Route component={NotFound} />
+  </Switch>
 )
 
 export default Routes

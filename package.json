@@ -3,10 +3,9 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "predeploy": "webpack --config=webpack.prod.js",
-    "deploy": "surge --project dist --domain https://funny-pump.surge.sh",
-    "build": "webpack --config=webpack.prod.js",
-    "start": "webpack-dev-server",
+    "predeploy": "webpack --config=webpack/webpack.prod.js",
+    "deploy": "surge --project dist --domain https://aletta.surge.sh",
+    "start": "webpack-dashboard -- webpack-dev-server --config=webpack/webpack.dev.js",
     "test": "jest"
   },
   "devDependencies": {

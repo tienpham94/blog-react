@@ -7,13 +7,13 @@ const webpack = require('webpack')
 
 
 module.exports = {
-  context: resolve(__dirname, 'src'),
+  context: resolve(__dirname, '../src'),
   entry: {
     app: `./index.js`,
     vendor: ['react', 'react-dom', 'react-router']
   },
   output: {
-    path: resolve(__dirname, 'dist'),
+    path: resolve(__dirname, '../dist'),
     filename: '[name].[chunkhash:6].js',
     publicPath: '/',
   },
@@ -29,7 +29,9 @@ module.exports = {
   },
   devtool: 'source-map',
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(['dist'], {
+      root: resolve(__dirname, '..')
+    }),
     new ExtractTextPlugin('styles.[chunkhash:6].css'),
     new HtmlWebpackPlugin({
       filename: '200.html',
