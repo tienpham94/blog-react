@@ -1,8 +1,8 @@
-exports[`test something 1`] = `
+exports[`test About component should render as expected 1`] = `
 <div>
   <h1
     className="heading">
-    Hi, I am Tien
+    Hi, I am Tien Pham
   </h1>
   <p
     className="bio">
