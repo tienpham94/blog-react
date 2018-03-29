@@ -3,6 +3,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "build": "webpack --config=webpack.prod.js",
     "start": "webpack-dev-server",
     "test": "jest"
   },
