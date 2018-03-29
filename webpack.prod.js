@@ -1,9 +1,10 @@
 const { resolve } = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const DashboardPlugin = require('webpack-dashboard/plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const webpack = require('webpack')
 
-const srcDir = resolve(__dirname, 'src')
 
 module.exports = {
   context: resolve(__dirname, 'src'),
@@ -16,9 +17,6 @@ module.exports = {
     filename: '[name].[chunkhash:6].js',
     publicPath: '/',
   },
-  devServer: {
-    historyApiFallback: true
-  },
   module: {
     rules: [{
       test: /\.js$/,
@@ -26,21 +24,15 @@ module.exports = {
       exclude: /node_modules/
     }, {
       test: /\.css$/,
-      use: [{
-        loader: 'style-loader'
-      }, {
-        loader: 'css-loader',
-        options: {
-          modules: true,
-          localIdentName: '[name]-[local]-[hash:base64:6]',
-          camelCase: true
-        }
-      }]
+      use: ExtractTextPlugin.extract(['css-loader?modules,localIdentName="[name]-[local]-[hash:base64:6]",camelCase'])
     }]
   },
   devtool: 'source-map',
   plugins: [
+    new CleanWebpackPlugin(['dist']),
+    new ExtractTextPlugin('styles.[chunkhash:6].css'),
     new HtmlWebpackPlugin({
+      filename: '200.html',
       template: `./index.html`
     }),
     new webpack.optimize.CommonsChunkPlugin({
