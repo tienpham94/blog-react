@@ -1,0 +1,18 @@
+exports[`test component 1`] = `
+<div>
+  <Post
+    content="One of the easiest ways to get a job in the early GitHub days..."
+    excerpt="One of the easiest ways to get a job"
+    slug="how-to-build-a-progressive-web-app-with-react"
+    title="How to build a progressive web app with React"
+    titleLink={true} />
+</div>
+`;
+
+exports[`test cpme 1`] = `
+<div>
+  <p>
+    No posts here
+  </p>
+</div>
+`;
