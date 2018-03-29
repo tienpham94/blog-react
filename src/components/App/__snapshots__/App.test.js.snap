@@ -1,0 +1,11 @@
+exports[`test sample 1`] = `
+<BrowserRouter>
+  <div>
+    <Header />
+    <div
+      className="container">
+      <Routes />
+    </div>
+  </div>
+</BrowserRouter>
+`;
