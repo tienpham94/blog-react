@@ -30,6 +30,9 @@ module.exports = {
     }]
   },
   devtool: 'source-map',
+  performance: {
+    hints: 'error'
+  },
   resolve: {
     alias: {
       react: 'preact-compat',
@@ -40,9 +43,12 @@ module.exports = {
     new CleanWebpackPlugin(['dist'], {
       root: resolve(__dirname, '..')
     }),
-    new ExtractTextPlugin('styles.[chunkhash:6].css'),
+    new ExtractTextPlugin({
+      filename: 'styles.[chunkhash:6].css',
+      allChunks: true
+    }),
     new HtmlWebpackPlugin({
-      filename: '200.html',
+      filename: 'index.html',
       template: `./index.html`
     }),
     new webpack.optimize.CommonsChunkPlugin({
