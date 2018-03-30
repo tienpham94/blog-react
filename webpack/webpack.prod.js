@@ -30,9 +30,6 @@ module.exports = {
     }]
   },
   devtool: 'source-map',
-  performance: {
-    hints: 'error'
-  },
   resolve: {
     alias: {
       react: 'preact-compat',
