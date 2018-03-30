@@ -4,6 +4,7 @@ const DashboardPlugin = require('webpack-dashboard/plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OfflinePlugin = require('offline-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const webpack = require('webpack')
 
 
@@ -47,6 +48,10 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor'
     }),
+    new CopyWebpackPlugin([{
+      from: resolve(__dirname, '../src/icons/'),
+      to: resolve(__dirname, '../dist/')
+    }]),
     new OfflinePlugin()
   ]
 }
